@@ -1,7 +1,7 @@
 DDSL module for PlayFramework 2
 =============
 
-
+## This is the old README.  This will be updated once the plugin is working.
 
 Current plugin versions:
 

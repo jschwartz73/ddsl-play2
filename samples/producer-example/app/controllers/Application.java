@@ -16,7 +16,7 @@ public class Application extends Controller {
 
     String ip = NetUtils.resolveLocalPublicIP();
 
-    return ok(index.render(ip, port, System.currentTimeMillis()));
+    return ok(index.render(ip, port, System.currentTimeMillis(), "Have a nice day"));
   }
   
 }

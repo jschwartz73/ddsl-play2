@@ -1,4 +1,4 @@
-@(ip: String, port: String, tts: Long)
+@(ip: String, port: String, tts: Long, message: String)
 
 @main("DDSL Example") {
 
@@ -9,6 +9,9 @@
     </tr>
     <tr>
         <th>Port</th><td>@port</td>
+    </tr>
+    <tr>
+        <th>Message</th><td>@message</td>
     </tr>
 </table>
 

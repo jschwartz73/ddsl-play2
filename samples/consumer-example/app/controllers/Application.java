@@ -32,10 +32,10 @@ public class Application extends Controller {
             public Result apply(WS.Response wsResponse) throws Throwable {
 
                 if (wsResponse.getStatus() != 200) {
-                    return ok("This server " + getThisServerInfo() + " got error("+wsResponse.getStatus()+") from external apiServer at: " + apiUrl);
+                    return ok("This server " + getThisServerInfo() + " got error("+wsResponse.getStatus()+") from external apiServer at: " + apiUrl).as("text/html");
                 } else {
                     String result = wsResponse.getBody();
-                    return ok("(ts:"+System.currentTimeMillis()+") This server " + getThisServerInfo() + " got response from apiServer at " + apiUrl + ": " + result);
+                    return ok("(ts:"+System.currentTimeMillis()+") This server " + getThisServerInfo() + " got response from apiServer at " + apiUrl + ": " + result).as("text/html");
                 }
             }
         }));

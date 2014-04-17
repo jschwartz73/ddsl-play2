@@ -13,8 +13,6 @@ class DdslPlugin(val app:play.api.Application) extends Plugin with DdslConfig wi
   var client:DdslClient = null
   var ddslEnvironment:String = null
 
-
-
   override def onStart() {
     ddslEnvironment = getProp("ddsl.environment", "test", false)
     val ttl_mills : Long = getProp("ddsl.client_cache_ttl_mills", "1000", false).toLong
@@ -26,14 +24,18 @@ class DdslPlugin(val app:play.api.Application) extends Plugin with DdslConfig wi
     getServiceId() match {
       case Some(sid:ServiceId) => {
         val sl = getServiceLocation()
+
         Logger.info("Registering this service as Up. ServiceID: " + sid + " ServiceLocation: " + sl);
-        client.serviceUp( new Service(sid, sl))
+        val b = client.serviceUp( new Service(sid, sl))
+
+        if (!b) {
+          Logger.error("Service " + sid + " did not start");
+        }
       }
       case None => {
         //nothing to register - we're done.
       }
     }
-
   }
 
   override def onStop() {

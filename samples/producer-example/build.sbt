@@ -3,9 +3,7 @@ name := "producer-example"
 version := "1.0-SNAPSHOT"
 
 libraryDependencies ++= Seq(
-  javaJdbc,
-  javaEbean,
-  cache
-)     
+  "com.kjetland" %% "ddsl-play2" % "1.3"
+)
 
 play.Project.playJavaSettings

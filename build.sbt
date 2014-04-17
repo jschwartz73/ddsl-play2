@@ -2,6 +2,8 @@ import _root_.java.io.File
 
 name := "ddsl-play2"
 
+organization := "com.kjetland"
+
 version := "1.3"
 
 publishTo := Some(Resolver.file("http://jschwartz73.github.io/ddsl-play2",

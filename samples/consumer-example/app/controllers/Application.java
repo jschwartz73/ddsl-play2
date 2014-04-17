@@ -22,6 +22,7 @@ public class Application extends Controller {
     }
 
     public static Result index() {
+        Logger.info("Processing request...");
         final String apiUrl = DDSL.getBestUrl("Play2ExampleServer", "1.0", "http");
         Logger.info("Using apiUrl: " + apiUrl);
         F.Promise<WS.Response> responsePromise = WS.url(apiUrl).get();

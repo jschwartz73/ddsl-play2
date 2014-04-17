@@ -1,7 +1,18 @@
-@(message: String)
+@(ip: String, port: String, tts: Long)
 
-@main("Welcome to Play 2.0") {
-    
-    @play20.welcome(message, style = "Java")
-    
+@main("DDSL Example") {
+
+<h1>Service Information</h1>
+<table border="1">
+    <tr>
+        <th>IP</th><td>@ip</td>
+    </tr>
+    <tr>
+        <th>Port</th><td>@port</td>
+    </tr>
+</table>
+
+<br>
+As of @tts
+
 }

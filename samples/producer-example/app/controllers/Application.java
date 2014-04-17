@@ -9,13 +9,14 @@ import views.html.*;
 public class Application extends Controller {
   
   public static Result index() {
-  	Logger.info("Processing request");
+  	Logger.info("Processing request...");
+
     String port = Play.application().configuration().getString("http.port");
     if ( port == null) port = "9000";
 
     String ip = NetUtils.resolveLocalPublicIP();
 
-    return ok("Answer from " + ip + ":" + port + " (ts: "+System.currentTimeMillis()+")");
+    return ok(index.render(ip, port, System.currentTimeMillis()));
   }
   
 }

@@ -3,6 +3,9 @@ DDSL module for PlayFramework 2
 
 ## This is the old README.  This will be updated once the plugin is working.
 
+To run it on a different port than 9000
+	play -Dhttp.port=9123 "run 9123"
+
 Current plugin versions:
 
 * ***1.2*** for Play 2.1
